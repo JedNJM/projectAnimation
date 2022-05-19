@@ -5,8 +5,32 @@ const product4 = document.getElementById("product4");
 const product5 = document.getElementById("product5");
 const product6 = document.getElementById("product6");
 const product7 = document.getElementById("product7");
+
 // init controller
 var controller = new ScrollMagic.Controller();
+
+var headlines = gsap.utils.toArray("#Question1, #Question2, #Question3");
+
+headlines.forEach((elem, i) => {
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: elem,
+      start: "+=133 50%",
+      end: "+=350 -10%",
+      scrub: true,
+      markers: false,
+      toggleActions: "play reverse play reverse",
+    },
+  });
+
+  tl.to(elem, { opacity: 1, duration: 0.5 }).to(
+    elem,
+    { opacity: 0, duration: 0.4 },
+    0.8
+  );
+});
+ 
+
 
 var images = [
   "./static/animations/section_1/0001.png",
@@ -136,17 +160,16 @@ var images = [
 ];
 var obj = { curImg: 0 };
 var tween1 = TweenMax.to(obj, 0.5, {
-  curImg: images.length - 1, 
-  roundProps: "curImg", 
-  repeat: 3, 
-  // immediateRender: true,		
-  ease: Linear.easeNone, 
+  curImg: images.length - 1,
+  roundProps: "curImg",
+  repeat: 3,
+  // immediateRender: true,
+  ease: Linear.easeNone,
   onUpdate: function () {
-    $("#myimg1").attr("src", images[obj.curImg]); 
+    $("#myimg1").attr("src", images[obj.curImg]);
   },
 });
 
- 
 var scene1 = new ScrollMagic.Scene({
   triggerElement: product1,
   duration: 1000,
@@ -155,8 +178,8 @@ var scene1 = new ScrollMagic.Scene({
   .addTo(controller)
   .addIndicators();
 
-
-var images2 = [ "./static/animations/section_2/0001.png",
+var images2 = [
+  "./static/animations/section_2/0001.png",
   "./static/animations/section_2/0002.png",
   "./static/animations/section_2/0003.png",
   "./static/animations/section_2/0004.png",
@@ -181,17 +204,16 @@ var images2 = [ "./static/animations/section_2/0001.png",
 
 var obj2 = { curImg: 0 };
 var tween2 = TweenMax.to(obj2, 0.5, {
-  curImg: images.length - 1, 
-  roundProps: "curImg", 
-  repeat: 3, 
-//  immediateRender: true,		
-  ease: Linear.easeNone, 
+  curImg: images.length - 1,
+  roundProps: "curImg",
+  repeat: 3,
+  //  immediateRender: true,
+  ease: Linear.easeNone,
   onUpdate: function () {
-    $("#myimg2").attr("src", images2[obj2.curImg]); 
+    $("#myimg2").attr("src", images2[obj2.curImg]);
   },
 });
 
- 
 var scene2 = new ScrollMagic.Scene({
   triggerElement: product2,
   duration: 2000,
@@ -202,27 +224,27 @@ var scene2 = new ScrollMagic.Scene({
 
 // -------------------------------------------------------
 
-
- var images3 = [ "./static/animations/section_2/0009.png",
- "./static/animations/section_2/0010.png",
- "./static/animations/section_2/0011.png",
- "./static/animations/section_2/0012.png",
- "./static/animations/section_2/0013.png",
- "./static/animations/section_2/0014.png",
- "./static/animations/section_2/0015.png",
- "./static/animations/section_2/0016.png",
- "./static/animations/section_2/0017.png",
+var images3 = [
+  "./static/animations/section_2/0009.png",
+  "./static/animations/section_2/0010.png",
+  "./static/animations/section_2/0011.png",
+  "./static/animations/section_2/0012.png",
+  "./static/animations/section_2/0013.png",
+  "./static/animations/section_2/0014.png",
+  "./static/animations/section_2/0015.png",
+  "./static/animations/section_2/0016.png",
+  "./static/animations/section_2/0017.png",
 ];
 
 var obj3 = { curImg: 0 };
 var tween3 = TweenMax.to(obj3, 0.5, {
-  curImg: images.length - 1, 
-  roundProps: "curImg", 
-  repeat: 3, 
-//  immediateRender: true,		
-  ease: Linear.easeNone, 
+  curImg: images.length - 1,
+  roundProps: "curImg",
+  repeat: 3,
+  //  immediateRender: true,
+  ease: Linear.easeNone,
   onUpdate: function () {
-    $("#myimg3").attr("src", images3[obj3.curImg]); 
+    $("#myimg3").attr("src", images3[obj3.curImg]);
   },
 });
 
@@ -235,16 +257,10 @@ var scene3 = new ScrollMagic.Scene({
   .addTo(controller)
   .addIndicators();
 
-
-
 // -------------------------------------------------------
 
-
-
-
-
-
-  var images4 = [ "./static/animations/section_2/0009.png",
+var images4 = [
+  "./static/animations/section_2/0009.png",
   "./static/animations/section_2/0010.png",
   "./static/animations/section_2/0011.png",
   "./static/animations/section_2/0012.png",
@@ -257,17 +273,16 @@ var scene3 = new ScrollMagic.Scene({
 
 var obj4 = { curImg: 0 };
 var tween4 = TweenMax.to(obj4, 0.5, {
-  curImg: images.length - 1, 
-  roundProps: "curImg", 
-  repeat: 3, 
-//  immediateRender: true,		
-  ease: Linear.easeNone, 
+  curImg: images.length - 1,
+  roundProps: "curImg",
+  repeat: 3,
+  //  immediateRender: true,
+  ease: Linear.easeNone,
   onUpdate: function () {
-    $("#myimg4").attr("src", images4[obj4.curImg]); 
+    $("#myimg4").attr("src", images4[obj4.curImg]);
   },
 });
 
- 
 var scene4 = new ScrollMagic.Scene({
   triggerElement: product4,
   duration: 2000,
@@ -276,15 +291,10 @@ var scene4 = new ScrollMagic.Scene({
   .addTo(controller)
   .addIndicators();
 
-
-
-
-
 // -------------------------------------------------------
 
-
-
-  var images5 = [ "./static/animations/section_2/0009.png",
+var images5 = [
+  "./static/animations/section_2/0009.png",
   "./static/animations/section_2/0010.png",
   "./static/animations/section_2/0011.png",
   "./static/animations/section_2/0012.png",
@@ -297,17 +307,16 @@ var scene4 = new ScrollMagic.Scene({
 
 var obj5 = { curImg: 0 };
 var tween5 = TweenMax.to(obj5, 0.5, {
-  curImg: images.length - 1, 
-  roundProps: "curImg", 
-  repeat: 3, 
-//  immediateRender: true,		
-  ease: Linear.easeNone, 
+  curImg: images.length - 1,
+  roundProps: "curImg",
+  repeat: 3,
+  //  immediateRender: true,
+  ease: Linear.easeNone,
   onUpdate: function () {
-    $("#myimg5").attr("src", images5[obj5.curImg]); 
+    $("#myimg5").attr("src", images5[obj5.curImg]);
   },
 });
 
- 
 var scene5 = new ScrollMagic.Scene({
   triggerElement: product5,
   duration: 2000,
@@ -317,81 +326,70 @@ var scene5 = new ScrollMagic.Scene({
   .addIndicators();
 // -------------------------------------------------------
 
-
 // -------------------------------------------------------
 
-
-
-var images6 = [ "./static/animations/section_2/0009.png",
-"./static/animations/section_2/0010.png",
-"./static/animations/section_2/0011.png",
-"./static/animations/section_2/0012.png",
-"./static/animations/section_2/0013.png",
-"./static/animations/section_2/0014.png",
-"./static/animations/section_2/0015.png",
-"./static/animations/section_2/0016.png",
-"./static/animations/section_2/0017.png",
+var images6 = [
+  "./static/animations/section_2/0009.png",
+  "./static/animations/section_2/0010.png",
+  "./static/animations/section_2/0011.png",
+  "./static/animations/section_2/0012.png",
+  "./static/animations/section_2/0013.png",
+  "./static/animations/section_2/0014.png",
+  "./static/animations/section_2/0015.png",
+  "./static/animations/section_2/0016.png",
+  "./static/animations/section_2/0017.png",
 ];
 
 var obj6 = { curImg: 0 };
 var tween6 = TweenMax.to(obj6, 0.5, {
-curImg: images.length - 1, 
-roundProps: "curImg", 
-repeat: 3, 
-//  immediateRender: true,		
-ease: Linear.easeNone, 
-onUpdate: function () {
-  $("#myimg6").attr("src", images6[obj6.curImg]); 
-},
+  curImg: images.length - 1,
+  roundProps: "curImg",
+  repeat: 3,
+  //  immediateRender: true,
+  ease: Linear.easeNone,
+  onUpdate: function () {
+    $("#myimg6").attr("src", images6[obj6.curImg]);
+  },
 });
 
-
 var scene6 = new ScrollMagic.Scene({
-triggerElement: product6,
-duration: 2000,
+  triggerElement: product6,
+  duration: 2000,
 })
-.setTween(tween6)
-.addTo(controller)
-.addIndicators();
-
-
-
+  .setTween(tween6)
+  .addTo(controller)
+  .addIndicators();
 
 // -------------------------------------------------------
 
-
-
-var images7 = [ "./static/animations/section_2/0009.png",
-"./static/animations/section_2/0010.png",
-"./static/animations/section_2/0011.png",
-"./static/animations/section_2/0012.png",
-"./static/animations/section_2/0013.png",
-"./static/animations/section_2/0014.png",
-"./static/animations/section_2/0015.png",
-"./static/animations/section_2/0016.png",
-"./static/animations/section_2/0017.png",
+var images7 = [
+  "./static/animations/section_2/0009.png",
+  "./static/animations/section_2/0010.png",
+  "./static/animations/section_2/0011.png",
+  "./static/animations/section_2/0012.png",
+  "./static/animations/section_2/0013.png",
+  "./static/animations/section_2/0014.png",
+  "./static/animations/section_2/0015.png",
+  "./static/animations/section_2/0016.png",
+  "./static/animations/section_2/0017.png",
 ];
 
 var obj7 = { curImg: 0 };
 var tween7 = TweenMax.to(obj7, 0.5, {
-curImg: images.length - 1, 
-roundProps: "curImg", 
-repeat: 3, 
-//  immediateRender: true,		
-ease: Linear.easeNone, 
-onUpdate: function () {
-  $("#myimg7").attr("src", images7[obj7.curImg]); 
-},
+  curImg: images.length - 1,
+  roundProps: "curImg",
+  repeat: 3,
+  //  immediateRender: true,
+  ease: Linear.easeNone,
+  onUpdate: function () {
+    $("#myimg7").attr("src", images7[obj7.curImg]);
+  },
 });
 
-
 var scene7 = new ScrollMagic.Scene({
-triggerElement: product7,
-duration: 2000,
+  triggerElement: product7,
+  duration: 2000,
 })
-.setTween(tween7)
-.addTo(controller)
-.addIndicators();
-
-
-
+  .setTween(tween7)
+  .addTo(controller)
+  .addIndicators();
